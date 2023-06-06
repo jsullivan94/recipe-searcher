@@ -11,3 +11,42 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.recipe-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.recipe-card {
+  flex: 0 0 24%; /* This will ensure that 4 cards fit in a row (100/4 = 25, but we leave a little room for margins) */
+  margin: 1%; /* Little bit of margin for some spacing */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Optional: Give the cards a small shadow for effect */
+  transition: transform 0.3s ease-in-out; /* Optional: Transition for hover effect */
+}
+
+.recipe-card:hover {
+  transform: scale(1.05); /* Optional: Make the card grow a bit when hovering */
+}
+
+.recipe-card h1 {
+  font-size: 1.5em;
+  text-align: center;
+  padding: 10px;
+}
+
+.recipe-card h3 {
+  font-size: 1.2em;
+  text-align: center;
+  color: #666;
+  padding: 5px;
+}
+
+.recipe-card img {
+  width: 100%; /* Make sure the image takes the full width of the card */
+  height: auto; /* Keep aspect ratio of the image */
+}
+
+.recipe-card div {
+  padding: 10px;
+  text-align: justify;
+}

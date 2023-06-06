@@ -12,7 +12,7 @@ const individualRecipe = recipes.map(recipe => {
     
 })
 return (
-  <div>
+  <div className="recipe-container">
       {individualRecipe}
   </div>
   );
