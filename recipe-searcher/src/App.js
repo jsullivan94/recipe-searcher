@@ -15,9 +15,10 @@ function App() {
 
   return (
       <div>
+        <Calculator />
      <Header />
      <RecipeList recipes={recipes}/>
-     <Calculator />
+     
       </div>
   );
 }
