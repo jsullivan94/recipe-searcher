@@ -1,8 +1,11 @@
 import RecipeForm from "./RecipeForm";
+import RecipeList from "./RecipeList";
 
-function MyRecipes({setRecipes}) {
+function MyRecipes({setRecipes , recipes}) {
 return (
+    <div>
     <RecipeForm  setRecipes={setRecipes}/>
+    </div>
 )
 }
 

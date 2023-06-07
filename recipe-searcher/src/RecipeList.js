@@ -5,7 +5,7 @@ function RecipeList({ recipes, setRecipes }) {
 const individualRecipe = recipes.map(recipe => {
     return <RecipeCard key={recipe.id}{...recipe}
            setRecipes={setRecipes}
-    />
+          />
     
 })
 return (

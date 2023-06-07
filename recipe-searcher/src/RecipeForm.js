@@ -1,6 +1,6 @@
 
-
-function RecipeForm({setRecipes}) {
+import RecipeList from "./RecipeList"
+function RecipeForm({setRecipes, recipes}) {
 
 
 function handleSubmit(event){
@@ -87,6 +87,7 @@ return (
         className="submit"
       />
     </form>
+
   </div>
 );
 }
