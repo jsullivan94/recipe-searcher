@@ -1,6 +1,6 @@
 
 
-function RecipeCard({name, image, description, difficult}) {
+function RecipeCard({name, image, description}) {
     return (
             <div className="recipe-card">
                 <h1>{name}</h1>

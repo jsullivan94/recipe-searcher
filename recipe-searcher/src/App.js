@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import Header from "./Header";
 import RecipeList from "./RecipeList";
 import Calculator from "./Calculator";
-
+import arrayShuffle from "array-shuffle";
 
 function App() {
   const [recipes, setRecipes] = useState([])
@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     fetch('http://localhost:3000/recipes/')
     .then(resp => resp.json())
-    .then(recipeData => setRecipes(recipeData))
+    .then(recipeData => setRecipes(arrayShuffle(recipeData)))
   }, [])
 
   return (
