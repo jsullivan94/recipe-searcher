@@ -1,13 +1,10 @@
 import RecipeCard from "./RecipeCard";
 
-function RecipeList({ recipes }) {
+function RecipeList({ recipes, setRecipes }) {
     
 const individualRecipe = recipes.map(recipe => {
-    return <RecipeCard key={recipe.id}
-    name={recipe.name}
-    image={recipe.image}
-    description={recipe.description}
-    difficult={recipe.difficult}
+    return <RecipeCard key={recipe.id}{...recipe}
+           setRecipes={setRecipes}
     />
     
 })
