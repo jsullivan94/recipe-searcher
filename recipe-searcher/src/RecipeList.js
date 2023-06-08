@@ -13,10 +13,12 @@ function RecipeList({ setSearch, selectedFilter, setSelectedFilter, recipes, set
   }
 
 
+
 const individualRecipe = recipes.map(recipe => {
     return <RecipeCard key={recipe.id} {...recipe}
            setRecipes={setRecipes} onClick={() => handleRecipeDetails(recipe.id)}
     />
+
 })
 
 function renderRecipeDetails() {
@@ -25,6 +27,7 @@ function renderRecipeDetails() {
     return (
       <div>
       <RecipeDetails
+        name={recipe.name}
         key={recipe.id}
         ingredients={recipe.ingredients}
         steps={recipe.steps}

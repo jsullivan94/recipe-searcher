@@ -8,9 +8,10 @@ const headerStyle = {
 };
   return (
     <header style={headerStyle}>
-      <h1>
-        Recipe Searcher
+      <div className="headername">
+      <h1 className="background"> &#129369;&#160; FlatVorful &#160;&#160;&#129367;
       </h1>
+      </div>
       <div>
         <button onClick={() => setSelectedFilter('Breakfast')}>Breakfast</button>
         <button onClick={() => setSelectedFilter('Lunch')}>Lunch</button>
@@ -20,6 +21,10 @@ const headerStyle = {
         <button onClick={() => setSelectedFilter(null)}>Show All</button>
       </div>
       <input onChange={(e) => setSearch(e.target.value)} type="text" placeholder="Search..." />
+
+     
+      
+
     </header>
   );
 }

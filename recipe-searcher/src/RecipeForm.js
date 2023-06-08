@@ -1,6 +1,5 @@
 
-
-function RecipeForm({setRecipes}) {
+function RecipeForm({setRecipes, recipes}) {
 
 
 function handleSubmit(event){
@@ -86,6 +85,7 @@ return (
         className="submit"
       />
     </form>
+
   </div>
 );
 }

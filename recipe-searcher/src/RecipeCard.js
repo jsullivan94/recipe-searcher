@@ -1,10 +1,13 @@
 import { useState } from "react";
 
+
 function RecipeCard({id, name, image, description, setRecipes, onClick}) {
+
     const [isLiked, setIsLiked] = useState(false)
     function handleClick(){
         setIsLiked(preVal => !preVal)
     }
+   
     
   function handleDelete(){
     fetch(`http://localhost:3000/recipes/${id}`,{
@@ -14,6 +17,7 @@ function RecipeCard({id, name, image, description, setRecipes, onClick}) {
     .then(() =>setRecipes(prevRecipes =>{
         return prevRecipes.filter(recipe=> recipe.id !== id)
     }) )
+
 }
     return (
             <div className="recipe-card">
@@ -26,6 +30,7 @@ function RecipeCard({id, name, image, description, setRecipes, onClick}) {
                 <button className="like-btn" onClick={handleClick}>UnFavorite  &#x1F49C;</button>
                  }
                  &nbsp;&nbsp;&nbsp;<button className="del-btn" onClick={handleDelete}>Delete &#128465;</button>
+            
                 </div>
     
             </div>
