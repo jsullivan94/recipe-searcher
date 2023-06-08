@@ -2,7 +2,7 @@
 
 function Calculator() {
     return (
-        <form>
+        <form className="calculator">
             <h1>Conversion Calculator</h1>
             <select>
                 <option>Select</option>

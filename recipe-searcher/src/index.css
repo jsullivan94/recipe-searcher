@@ -50,59 +50,132 @@ code {
   padding: 10px;
   text-align: justify;
 }
-/* CSS code for the Conversion Calculator */
-form {
-  width: 300px;
-  margin: 0 auto;
+
+.submit {
+  position: relative;
+  background-color: black;
+  border-radius: 5px;
+  height: 2rem;
+  width: max-content;
+  color: whitesmoke;
+  font-size: 18px;
+  justify-self: center;
+  font-family: monospace;
+  margin: 3px;
+}
+
+.submit:hover {
+  background-color: whitesmoke;
+  border: black;
+  color: black
+}
+
+.input-text {
+  border-radius: 5px;
+  height: 2rem;
+  width: 60%;
+  font-size: 18px;
+  font-family: monospace;
+  margin: 3px;
+}
+
+header {
+  background-color: #f2f2f2;
+ background-size: cover;
+  background-position: center;
   padding: 20px;
-  background-color: #f5f5f5;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
   text-align: center;
-  margin-bottom: 20px;
-}
-
-select,
-input[type="text"] {
-  display: block;
   width: 100%;
-  padding: 10px, 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
 }
 
-select:focus,
-input[type="text"]:focus {
-  outline: none;
-  border-color: #80bdff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+header h1 {
+  font-size: 2.5em;
+  font-weight: 900;
+  text-align: center;
+  padding: 0.5rem 0;
 }
 
-select {
-  height: 40px;
-}
-
-input[type="text"] {
-  height: 36px;
-}
-
-input[type="submit"] {
-  display: block;
-  width: 100%;
-  padding: 10px;
+header div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 20px;
-  color: #fff;
-  background-color: #007bff;
+}
+
+header input[type="text"] {
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+  width: 300px;
+}
+
+header button {
+  padding: 8px 16px;
+  font-size: 16px;
+  border-radius: 4px;
+  background-color: #4caf50;
+  color: white;
   border: none;
-  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+header button:last-child {
+  margin-right: 0;
+}
+
+
+
+
+
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.calculator h1 {
+  font-size: 2.5em;
+  font-weight: 900;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.calculator select,
+.calculator input[type="text"],
+.calculator input[type="submit"] {
+  margin-top: 10px;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 300px;
+}
+
+.calculator label {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.calculator input[type="submit"] {
+  margin-top: 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
   cursor: pointer;
 }
 
-input[type="submit"]:hover {
-  background-color: #0056b3;
+.calculator input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.calculator select:focus,
+.calculator input[type="text"]:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 5px #4caf50;
 }

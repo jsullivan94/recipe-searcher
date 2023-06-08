@@ -3,24 +3,39 @@ import Header from "./Header";
 import RecipeList from "./RecipeList";
 import Calculator from "./Calculator";
 import arrayShuffle from "array-shuffle";
+import MyRecipes from "./MyRecipes"
 
 function App() {
   const [recipes, setRecipes] = useState([])
+  const [selectedFilter, setSelectedFilter ] = useState(null)
+  const [search, setSearch] = useState('')
+  const buttonResult = selectedFilter === null ? recipes : recipes.filter(r => r.subcategory === selectedFilter)
+  const result = buttonResult.filter(r => search === '' ? true : r.name.toLowerCase().includes(search.toLowerCase()) )
+
 
   useEffect(() => {
     fetch('http://localhost:3000/recipes/')
     .then(resp => resp.json())
-    .then(recipeData => setRecipes(arrayShuffle(recipeData)))
+    .then(recipeData => arrayShuffle(recipeData))
+    .then(shuffledData => setRecipes(shuffledData))
   }, [])
 
   return (
-      <div>
-        <Calculator />
-     <Header />
-     <RecipeList recipes={recipes}/>
-     
+    <div>
+      <Header 
+      recipes={recipes}
+      selectedFilter={selectedFilter} 
+      setSelectedFilter={setSelectedFilter} 
+      setSearch={setSearch}/>
+      <MyRecipes setRecipes={setRecipes}/>
+      <RecipeList 
+      recipes={result}
+      setRecipes={setRecipes}/>
+      <Calculator />
       </div>
   );
 }
 
 export default App;
+
+  
