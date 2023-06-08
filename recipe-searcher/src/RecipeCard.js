@@ -1,5 +1,7 @@
 import { useState } from "react";
-
+import { Link, useParams , Route , Routes, BrowserRouter  } from "react-router-dom";
+import { useFetcher } from "react-router-dom";
+import RecipeItem from "./RecipeItem";
 
 
 function RecipeCard({id, name, image, description, difficult,setRecipes }) {
@@ -19,6 +21,11 @@ function RecipeCard({id, name, image, description, difficult,setRecipes }) {
         return prevRecipes.filter(recipe=> recipe.id !== id)
     }) )
   }
+ 
+   
+
+
+
     return (
             <div className="recipe-card">
                

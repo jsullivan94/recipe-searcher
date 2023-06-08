@@ -1,9 +1,17 @@
 
-function RecipeForm({setRecipes, recipes}) {
+function RecipeForm({setRecipes, recipes})
 
 
+{
+
+    let newName =  ''
+    let newImg = ""
+
+    
 function handleSubmit(event){
     event.preventDefault()
+newName = event.target.name.value
+newImg = event.target.image.value
 
 const newRecipe = {
     "name":event.target.name.value,
@@ -86,7 +94,7 @@ return (
         className="submit"
       />
     </form>
-
+     
   </div>
 );
 }

@@ -668,6 +668,32 @@
       "subcategory": "Breakfast",
       "dish_type": "Mood boosting recipes",
       "maincategory": "health"
+    },
+    {
+      "name": "BULBASAUR",
+      "description": "khkjk",
+      "image": "https://i5.walmartimages.com/asr/b3337795-302f-4103-8add-a83309ee9822.11e15756eb30b5a7b90580be65d28af7.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
+      "steps": [
+        "kkjlkllpl"
+      ],
+      "url": "",
+      "author": "",
+      "rattings": 0,
+      "ingredients": [
+        "Cottage Cheese: You will need 1 cup of a full fat cottage cheese for this recipe! I actually used a double cream cottage cheese which had 6% milkfat. It gave this healthy ice cream the most creamy texture! Strawberries: This ice cream recipe is strawberry cheesecake flavored, so you of course need fresh strawberries! 1/2 cup of the red berry works perfectly. Pure Maple Syrup: To sweeten things up, you’ll add 2 tbsp pure maple syrup. You could also use different natural sweeteners like honey or agave nectar! Graham Crackers: Graham crackers add the perfect crunch and texture here. Add 2 sleeves, or 8 of the small crackers."
+      ],
+      "nutrients": {},
+      "times": {
+        "Preparation": "",
+        "Cooking": ""
+      },
+      "serves": 0,
+      "difficult": "Easy",
+      "vote_count": 2,
+      "subcategory": "Breakfast",
+      "dish_type": "Mood boosting recipes",
+      "maincategory": "health",
+      "id": "1WgwimS"
     }
   ]
 }
