@@ -1,3 +1,4 @@
+import RecipeList from "./RecipeList";
 function Search({ setSelectedFilter, setSearch}) {
  return(
      <header>

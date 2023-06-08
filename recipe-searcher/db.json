@@ -33,6 +33,40 @@
       "maincategory": "health"
     },
     {
+      "id": "0cd1159f-f10b-4846-a0f5-9f8d7d802551",
+      "url": "https://www.bbcgoodfood.com/recipes/chia-almond-overnight-oats",
+      "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chia-almond-overnight-oats-with-raspberries-and-blueberries-1-440-400-98ea1d8.jpg",
+      "name": "Chia & almond overnight oats",
+      "description": "Start the day with energising oats and omega-3-rich chia seeds with this delicious breakfast. It's vegan, but you can use cow's milk and yogurt, if you prefer",
+      "author": "Sara Buenfeld",
+      "rattings": 5,
+      "ingredients": [
+        "200g jumbo porridge oats",
+        "50g chia seeds",
+        "600ml unsweetened almond milk, plus 8 tbsp",
+        "2 tsp vanilla extract",
+        "125g punnet raspberries",
+        "100g almond yogurt",
+        "250g punnet blueberries",
+        "20g flaked almonds, toasted"
+      ],
+      "steps": [
+        "Tip the oats and seeds into a bowl and pour over the milk and vanilla extract. Leave for 5-10 mins for the oats to absorb some of the liquid.",
+        "Reserve 16 raspberries, then add the remainder to the oats and crush them into the mixture. Spoon into four tumblers or sundae dishes, then top with the yogurt and both lots of berries. Cover and chill overnight or until needed. To serve, pour 2 tbsp almond milk over each and scatter with the almonds."
+      ],
+      "nutrients": {},
+      "times": {
+        "Preparation": "10 mins",
+        "Cooking": "No Time"
+      },
+      "serves": 4,
+      "difficult": "Easy",
+      "vote_count": 18,
+      "subcategory": "Dinner",
+      "dish_type": "Mood boosting recipes",
+      "maincategory": "health"
+    },
+    {
       "id": "40920f21-dfc8-4b52-894e-31ee50b6c5de",
       "url": "https://www.bbcgoodfood.com/recipes/blueberry-nut-oat-bake",
       "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/blueberry-nut-oat-bake-4a1dd90.jpg",

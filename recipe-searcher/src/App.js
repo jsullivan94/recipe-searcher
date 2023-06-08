@@ -9,6 +9,7 @@ import { Route, useParams , BrowserRouter,Link , Routes } from "react-router-dom
 import Search from "./Search";
 
 
+
 function App() {
 
   const [recipes, setRecipes] = useState([])
@@ -28,7 +29,7 @@ function App() {
             <Header/>
             <BrowserRouter>
                 <nav>
-                
+                 <Link to="/" >Home</Link> &#160; &#160;
                 <Link  to="/about">About</Link> &#160; &#160;
                 <Link to="/newrecipe">Add a New Recipe</Link>&#160; &#160;
                 <Link to="/search">Search a Recipe by Name</Link>
@@ -37,9 +38,10 @@ function App() {
                       <Route path="/about" element={<About/>}/>
                       <Route path="/newrecipe" element={  <MyRecipes setRecipes={setRecipes} />}/>
                       <Route path="/search" element={<Search setSelectedFilter={setSelectedFilter} selectedFilter={selectedFilter} setSearch={setSearch}/>}/>
+                      <Route path="/" element={ <RecipeList recipes={result} setRecipes={setRecipes}/>}/>
                 </Routes>
-             </BrowserRouter>
-             <RecipeList recipes={result} setRecipes={setRecipes}/>
+               </BrowserRouter>
+             
              <Calculator />
              
           

@@ -125,3 +125,40 @@ header button {
 header button:last-child {
   margin-right: 0;
 }
+.recipe-card{
+  background: #fff;
+  color: #333;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 3px 3px 3px;
+  transition: all 0.3s ease;
+}
+.recipe-card  button {
+  margin-bottom:10px;
+}
+.recipe-card  :hover{
+  transform: rotate(3deg);
+
+}
+.recipe-card a {
+  color: black;
+  text-decoration: none;
+  display:block;
+  background: lightblue;
+  font-size: 0.9em;
+  text-align: center;
+  width: 120px;
+  padding: 9px;
+  border-radius: 4px;
+  margin: 20px auto 0;
+
+
+}
+ .recipe-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 40px;
+  
+  margin: 40px auto;
+
+ }

@@ -1,5 +1,4 @@
 
-import RecipeList from "./RecipeList"
 function RecipeForm({setRecipes, recipes}) {
 
 
