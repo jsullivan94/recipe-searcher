@@ -17,7 +17,6 @@ const newRecipe = {
     "name":event.target.name.value,
     "description": event.target.description.value,
     "image": event.target.image.value,
-    "steps": event.target.steps.value,
     "url":"",
     "author":"",
     "rattings":0,

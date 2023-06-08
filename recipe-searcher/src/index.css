@@ -50,6 +50,7 @@ code {
   padding: 10px;
   text-align: justify;
 }
+
 .submit {
   position: relative;
   background-color: black;
@@ -125,40 +126,92 @@ header button {
 header button:last-child {
   margin-right: 0;
 }
-.recipe-card{
-  background: #fff;
-  color: #333;
-  padding: 20px;
-  border-radius: 4px;
-  box-shadow: 3px 3px 3px;
-  transition: all 0.3s ease;
-}
-.recipe-card  button {
-  margin-bottom:10px;
-}
-.recipe-card  :hover{
-  transform: rotate(3deg);
 
+
+
+
+
+
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 }
-.recipe-card a {
-  color: black;
-  text-decoration: none;
-  display:block;
-  background: lightblue;
-  font-size: 0.9em;
+
+.calculator h1 {
+  font-size: 2.5em;
+  font-weight: 900;
   text-align: center;
-  width: 120px;
-  padding: 9px;
-  border-radius: 4px;
-  margin: 20px auto 0;
-
-
+  padding: 0.5rem 0;
 }
- .recipe-container{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 40px;
-  
-  margin: 40px auto;
 
- }
+.calculator select,
+.calculator input[type="text"],
+.calculator input[type="submit"] {
+  margin-top: 10px;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 300px;
+}
+
+.calculator label {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.calculator input[type="submit"] {
+  margin-top: 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.calculator input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.calculator select:focus,
+.calculator input[type="text"]:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 5px #4caf50;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.details h1 {
+  margin-bottom: 10px;
+}
+
+.details div {
+  margin-bottom: 5px;
+}
+
+.headername {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.background {
+  background-color: white;
+  padding: 10px;
+}
+
+.headername h1 {
+  margin-bottom: 10px;
+}

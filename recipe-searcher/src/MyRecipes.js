@@ -1,12 +1,16 @@
 import RecipeForm from "./RecipeForm";
-import RecipeList from "./RecipeList";
+import {useState} from "react"
 
-function MyRecipes({setRecipes , recipes}) {
+
+function MyRecipes({ recipes, setRecipes}) {
+    const [myRecipes, setMyRecipes] = useState([])
+
 return (
     <div>
     <RecipeForm  setRecipes={setRecipes}/>
     </div>
 )
+
 }
 
 export default MyRecipes;

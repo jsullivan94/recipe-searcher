@@ -1,11 +1,8 @@
 import { useState } from "react";
-import { Link, useParams , Route , Routes, BrowserRouter  } from "react-router-dom";
-import { useFetcher } from "react-router-dom";
-import RecipeItem from "./RecipeItem";
 
 
-function RecipeCard({id, name, image, description, difficult,setRecipes }) {
-   
+function RecipeCard({id, name, image, description, setRecipes, onClick}) {
+
     const [isLiked, setIsLiked] = useState(false)
     function handleClick(){
         setIsLiked(preVal => !preVal)
@@ -17,25 +14,20 @@ function RecipeCard({id, name, image, description, difficult,setRecipes }) {
         method: "DELETE"
     })
     .then(resp => resp.json())
-    .then(data =>setRecipes(prevRecipes =>{
+    .then(() =>setRecipes(prevRecipes =>{
         return prevRecipes.filter(recipe=> recipe.id !== id)
     }) )
-  }
- 
-   
 
-
-
+}
     return (
             <div className="recipe-card">
-               
-                <h1>{name}</h1>
-                <img src={image} alt={name}/>
+                <h1 >{name}</h1>
+                <img onClick={onClick} src={image} alt={name}/>
                 <div>{description}</div>
                 <div>
                  {!isLiked ?
-                <button className="like-btn" onClick={handleClick}>UnFavorite  &#x2661;</button> :
-                <button className="like-btn" onClick={handleClick}>Favorite  &#x1F49C;</button>
+                <button className="like-btn" onClick={handleClick}>Favorite  &#x2661;</button> :
+                <button className="like-btn" onClick={handleClick}>UnFavorite  &#x1F49C;</button>
                  }
                  &nbsp;&nbsp;&nbsp;<button className="del-btn" onClick={handleDelete}>Delete &#128465;</button>
             

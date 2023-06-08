@@ -1,18 +1,52 @@
 import RecipeCard from "./RecipeCard";
-import { Link, useParams , Route , Routes, BrowserRouter  } from "react-router-dom";
-import RecipeItem from "./RecipeItem";
+import RecipeDetails from "./RecipeDetails";
+import { useState } from "react"
+import Header from "./Header";
 
-function RecipeList({ recipes, setRecipes }) {
-    
+function RecipeList({ setSearch, selectedFilter, setSelectedFilter, recipes, setRecipes }) {
+  const [selectedRecipe, setSelectedRecipe] = useState(null)
+
+  
+
+  function handleRecipeDetails(recipeId) {
+    setSelectedRecipe(recipeId);
+  }
+
+
+
 const individualRecipe = recipes.map(recipe => {
-    return(
-     <RecipeCard key={recipe.id}{...recipe} setRecipes={setRecipes}/>
-     )
-    
+    return <RecipeCard key={recipe.id} {...recipe}
+           setRecipes={setRecipes} onClick={() => handleRecipeDetails(recipe.id)}
+    />
+
 })
+
+function renderRecipeDetails() {
+  if (selectedRecipe) { 
+    const recipe = recipes.find(recipe => recipe.id === selectedRecipe);
+    return (
+      <div>
+      <RecipeDetails
+        name={recipe.name}
+        key={recipe.id}
+        ingredients={recipe.ingredients}
+        steps={recipe.steps}
+      />
+      </div>
+    );
+  }
+  return null;
+}
+
 return (
-  <div className="recipe-container">
+  <div>
+    <Header selectedFilter={selectedFilter} 
+        setSelectedFilter={setSelectedFilter} 
+        setSearch={setSearch}/>
+    {renderRecipeDetails(null)}
+    <div className="recipe-container">
       {individualRecipe}
+    </div>
   </div>
   );
 }
