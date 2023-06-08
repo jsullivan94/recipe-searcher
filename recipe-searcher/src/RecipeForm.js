@@ -1,5 +1,6 @@
 
-function RecipeForm({setRecipes, recipes}) {
+function RecipeForm({setMyRecipes, setRecipes}) {
+
 
 
 function handleSubmit(event){
@@ -8,7 +9,7 @@ function handleSubmit(event){
 const newRecipe = {
     "name":event.target.name.value,
     "description": event.target.description.value,
-    "image": event.target.image.value,
+    "image": event.target.image.value, 
     "url":"",
     "author":"",
     "rattings":0,
@@ -35,9 +36,10 @@ const newRecipe = {
     body: JSON.stringify(newRecipe)    
  })
  .then(resp => resp.json())
- .then(newRecipeData => setRecipes(prevRecipes =>{
+ .then(newRecipeData => setMyRecipes(prevRecipes =>{
     return [newRecipeData , ...prevRecipes]
  }))
+
 }
 return (
     <div className="container">
@@ -85,7 +87,6 @@ return (
         className="submit"
       />
     </form>
-
   </div>
 );
 }

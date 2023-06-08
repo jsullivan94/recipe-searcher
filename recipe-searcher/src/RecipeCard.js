@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 
-function RecipeCard({id, name, image, description, setRecipes, onClick}) {
+function RecipeCard({id, name, image, description, setRecipes, setMyRecipes, onClick}) {
 
     const [isLiked, setIsLiked] = useState(false)
     function handleClick(){
@@ -17,7 +17,6 @@ function RecipeCard({id, name, image, description, setRecipes, onClick}) {
     .then(() =>setRecipes(prevRecipes =>{
         return prevRecipes.filter(recipe=> recipe.id !== id)
     }) )
-
 }
     return (
             <div className="recipe-card">
