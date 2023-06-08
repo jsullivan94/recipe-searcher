@@ -1,9 +1,12 @@
 import RecipeCard from "./RecipeCard";
 import RecipeDetails from "./RecipeDetails";
-import { useState } from "react";
+import { useState } from "react"
+import Header from "./Header";
 
-function RecipeList({ recipes, setRecipes }) {
+function RecipeList({ setSearch, selectedFilter, setSelectedFilter, recipes, setRecipes }) {
   const [selectedRecipe, setSelectedRecipe] = useState(null)
+
+  
 
   function handleRecipeDetails(recipeId) {
     setSelectedRecipe(recipeId);
@@ -20,11 +23,13 @@ function renderRecipeDetails() {
   if (selectedRecipe) { 
     const recipe = recipes.find(recipe => recipe.id === selectedRecipe);
     return (
+      <div>
       <RecipeDetails
         key={recipe.id}
         ingredients={recipe.ingredients}
         steps={recipe.steps}
       />
+      </div>
     );
   }
   return null;
@@ -32,6 +37,9 @@ function renderRecipeDetails() {
 
 return (
   <div>
+    <Header selectedFilter={selectedFilter} 
+        setSelectedFilter={setSelectedFilter} 
+        setSearch={setSearch}/>
     {renderRecipeDetails(null)}
     <div className="recipe-container">
       {individualRecipe}

@@ -1,9 +1,13 @@
 import React from "react";
 
 function Header({setSelectedFilter, setSearch }) {
-
+const headerStyle = {
+  backgroundImage: "url(https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80)",
+  backgroundSize: "cover",
+  backgroundPosition: "center"
+};
   return (
-    <header>
+    <header style={headerStyle}>
       <h1>
         Recipe Searcher
       </h1>

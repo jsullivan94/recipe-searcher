@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from "react";
-import Header from "./Header";
 import RecipeList from "./RecipeList";
 import Calculator from "./Calculator";
 import arrayShuffle from "array-shuffle";
 import MyRecipes from "./MyRecipes"
+
 
 function App() {
   const [recipes, setRecipes] = useState([])
@@ -22,13 +22,12 @@ function App() {
 
   return (
     <div>
-      <Header 
-      recipes={recipes}
-      selectedFilter={selectedFilter} 
-      setSelectedFilter={setSelectedFilter} 
-      setSearch={setSearch}/>
+      
       <MyRecipes setRecipes={setRecipes}/>
       <RecipeList 
+      selectedFilter={selectedFilter} 
+      setSelectedFilter={setSelectedFilter} 
+      setSearch={setSearch}
       recipes={result}
       setRecipes={setRecipes}/>
       <Calculator />
