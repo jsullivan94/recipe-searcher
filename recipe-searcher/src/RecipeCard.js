@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 
-function RecipeCard({id, name, image, description, setRecipes, setMyRecipes, onClick}) {
+function RecipeCard({id, name, image, description, setRecipes, onClick}) {
 
     const [isLiked, setIsLiked] = useState(false)
     function handleClick(){

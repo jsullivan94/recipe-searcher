@@ -10,7 +10,7 @@ import { Route, BrowserRouter,Link , Routes } from "react-router-dom";
 
 
 function App() {
-
+  const [myRecipes, setMyRecipes] = useState([])
   const [recipes, setRecipes] = useState([])
   const [selectedFilter, setSelectedFilter ] = useState(null)
   const [search, setSearch] = useState('')
@@ -23,7 +23,7 @@ function App() {
     .then(resp => resp.json())
     .then(recipeData => arrayShuffle(recipeData))
     .then(shuffledData => setRecipes(shuffledData))
-  }, [])
+  }, [myRecipes])
 
   return (
 
@@ -37,7 +37,7 @@ function App() {
                 </nav>
                   <Routes>
                       <Route path="/about" element={<About/>}/>
-                      <Route path="/newrecipe" element={  <MyRecipes recipes={recipes}setRecipes={setRecipes} />}/>
+                      <Route path="/newrecipe" element={  <MyRecipes recipes={recipes} setRecipes={setRecipes} myRecipes={myRecipes} setMyRecipes={setMyRecipes} />}/>
                       <Route path="/" element={ <RecipeList selectedFilter={selectedFilter} setSelectedFilter={setSelectedFilter} 
         setSearch={setSearch} recipes={result} setRecipes={setRecipes}/>}/>
         <Route path="/calculator" element={<Calculator />} />

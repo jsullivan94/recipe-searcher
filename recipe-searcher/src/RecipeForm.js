@@ -1,5 +1,5 @@
 
-function RecipeForm({setMyRecipes, setRecipes}) {
+function RecipeForm({setMyRecipes}) {
 
 
 
@@ -37,7 +37,7 @@ const newRecipe = {
  })
  .then(resp => resp.json())
  .then(newRecipeData => setMyRecipes(prevRecipes =>{
-    return [newRecipeData , ...prevRecipes]
+    return [newRecipeData]
  }))
 
 }

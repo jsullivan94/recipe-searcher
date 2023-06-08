@@ -208,15 +208,14 @@ header button:last-child {
 }
 
 .background {
-  background-color: white;
+  background-color: rgb(145, 230, 152);
   padding: 10px;
+  border-radius: 10px;
 }
 
 .headername h1 {
   margin-bottom: 10px;
 }
-
-
 
 
 

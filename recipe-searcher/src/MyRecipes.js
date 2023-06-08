@@ -1,17 +1,18 @@
 import RecipeForm from "./RecipeForm";
-import {useState} from "react"
 import RecipeCard from "./RecipeCard";
 
 
-function MyRecipes({ setRecipes }) {
-    const [myRecipes, setMyRecipes] = useState([])
+function MyRecipes({ myRecipes, setMyRecipes, setRecipes }) {
+    
 
-    const currentRecipe = myRecipes.map(myRecipe => <RecipeCard setMyRecipes={setMyRecipes} key={myRecipe.id} name={myRecipe.name} description={myRecipe.description} image={myRecipe.image}/>)
+    const currentRecipe = myRecipes.map(myRecipe => <RecipeCard  key={myRecipe.id} {...myRecipe}/>)
 
 return (
     <div>
     <RecipeForm setMyRecipes={setMyRecipes} setRecipes={setRecipes}/>
+    <div className="recipe-container">
     {currentRecipe}
+    </div>
     </div>
 )
 
