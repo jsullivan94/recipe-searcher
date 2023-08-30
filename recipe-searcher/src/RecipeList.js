@@ -5,21 +5,15 @@ import Header from "./Header";
 
 function RecipeList({ setSearch, selectedFilter, setSelectedFilter, recipes, setRecipes }) {
   const [selectedRecipe, setSelectedRecipe] = useState(null)
-
   
-
   function handleRecipeDetails(recipeId) {
     setSelectedRecipe(recipeId);
   }
 
-
-
-const individualRecipe = recipes.map(recipe => {
+  const individualRecipe = recipes.map(recipe => {
     return <RecipeCard key={recipe.id} {...recipe}
-           setRecipes={setRecipes} onClick={() => handleRecipeDetails(recipe.id)}
-    />
-
-})
+      setRecipes={setRecipes} onClick={() => handleRecipeDetails(recipe.id)}/>
+});
 
 function renderRecipeDetails() {
   if (selectedRecipe) { 

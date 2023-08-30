@@ -18,14 +18,14 @@ code {
 }
 
 .recipe-card {
-  flex: 0 0 24%; /* This will ensure that 4 cards fit in a row (100/4 = 25, but we leave a little room for margins) */
-  margin: 1%; /* Little bit of margin for some spacing */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Optional: Give the cards a small shadow for effect */
-  transition: transform 0.3s ease-in-out; /* Optional: Transition for hover effect */
+  flex: 0 0 24%;
+  margin: 1%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease-in-out;
 }
 
 .recipe-card:hover {
-  transform: scale(1.05); /* Optional: Make the card grow a bit when hovering */
+  transform: scale(1.05);
 }
 
 .recipe-card h1 {
@@ -127,12 +127,6 @@ header button:last-child {
   margin-right: 0;
 }
 
-
-
-
-
-
-
 .calculator {
   display: flex;
   flex-direction: column;
@@ -216,8 +210,6 @@ header button:last-child {
 .headername h1 {
   margin-bottom: 10px;
 }
-
-
 
 nav {
   display: flex;

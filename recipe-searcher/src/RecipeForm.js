@@ -1,10 +1,8 @@
 
 function RecipeForm({setMyRecipes}) {
 
-
-
 function handleSubmit(event){
-    event.preventDefault()
+  event.preventDefault()
 
 const newRecipe = {
     "name":event.target.name.value,
@@ -28,19 +26,19 @@ const newRecipe = {
       "maincategory": "health"
 }    
 
- fetch("http://localhost:3000/recipes",{
-    method:"POST",
-    headers:{
-        "Content-Type":"application/json"
-    },
-    body: JSON.stringify(newRecipe)    
- })
- .then(resp => resp.json())
- .then(newRecipeData => setMyRecipes(prevRecipes =>{
-    return [newRecipeData]
- }))
-
+fetch("http://localhost:3000/recipes",{
+  method:"POST",
+  headers:{
+    "Content-Type":"application/json"
+  },
+  body: JSON.stringify(newRecipe)    
+})
+.then(resp => resp.json())
+.then(newRecipeData => setMyRecipes(prevRecipes =>{
+  return [newRecipeData]
+}))
 }
+
 return (
     <div className="container">
     <form className="add-recipe-form" onSubmit={handleSubmit}>
@@ -58,7 +56,7 @@ return (
           placeholder="Enter your recipe,s description..."
           className="input-text"
         />
-      <br />
+      <br/>
       <input
         type="text"
         name="image"
