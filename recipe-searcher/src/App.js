@@ -1,10 +1,13 @@
-import React, {useState, useEffect} from "react";
+import {useState, useEffect} from "react";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
 import RecipeList from "./RecipeList";
 import Calculator from "./Calculator";
 import arrayShuffle from "array-shuffle";
 import MyRecipes from "./MyRecipes";
 import About from "./About";
-import { Route, BrowserRouter,Link , Routes } from "react-router-dom";
+import Nav from "./Nav";
+import RecipeDetails from "./RecipeDetails";
+
 
 function App() {
   const [myRecipes, setMyRecipes] = useState([])
@@ -24,18 +27,14 @@ function App() {
   return (
   <div>
     <BrowserRouter>
-      <nav>
-        <Link to="/">Home</Link> &#160; &#160;
-        <Link  to="/about">About</Link> &#160; &#160;
-        <Link to="/newrecipe">My Recipes</Link>&#160; &#160;
-        <Link to="/calculator">Calculator</Link>&#160; &#160;
-      </nav>
+      <Nav />
       <Routes>
         <Route path="/about" element={<About/>}/>
         <Route path="/newrecipe" element={  <MyRecipes recipes={recipes} setRecipes={setRecipes} myRecipes={myRecipes} setMyRecipes={setMyRecipes} />}/>
         <Route path="/" element={ <RecipeList selectedFilter={selectedFilter} setSelectedFilter={setSelectedFilter} 
           setSearch={setSearch} recipes={result} setRecipes={setRecipes}/>}/>
         <Route path="/calculator" element={<Calculator />} />
+        <Route path="recipe/:id" element={<RecipeDetails recipes={recipes} />} />
       </Routes>
     </BrowserRouter>
   </div>

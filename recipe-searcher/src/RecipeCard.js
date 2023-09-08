@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function RecipeCard({id, name, image, description, setRecipes, onClick}) {
 
@@ -18,9 +19,12 @@ function RecipeCard({id, name, image, description, setRecipes, onClick}) {
         }))
     };
     return (
+    
     <div className="recipe-card">
         <h1 >{name}</h1>
+        <Link to={`/recipe/${id}`}>
         <img onClick={onClick} src={image} alt={name}/>
+        </Link>
         <div>
             {description}
         </div>
@@ -33,6 +37,7 @@ function RecipeCard({id, name, image, description, setRecipes, onClick}) {
             
         </div>
     </div>
+    
 )};
 
 export default RecipeCard;
