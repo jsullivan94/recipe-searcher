@@ -8,7 +8,6 @@ import About from "./About";
 import Nav from "./Nav";
 import RecipeDetails from "./RecipeDetails";
 
-
 function App() {
   const [myRecipes, setMyRecipes] = useState([])
   const [recipes, setRecipes] = useState([])
