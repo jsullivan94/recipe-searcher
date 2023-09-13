@@ -152,30 +152,6 @@ header button:last-child {
   width: 300px;
 }
 
-.calculator label {
-  margin-top: 10px;
-  font-size: 16px;
-}
-
-.calculator input[type="submit"] {
-  margin-top: 20px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.calculator input[type="submit"]:hover {
-  background-color: #45a049;
-}
-
-.calculator select:focus,
-.calculator input[type="text"]:focus {
-  outline: none;
-  border-color: #4caf50;
-  box-shadow: 0 0 5px #4caf50;
-}
-
 .details {
   display: flex;
   flex-direction: column;
@@ -192,7 +168,7 @@ header button:last-child {
   margin-bottom: 5px;
 }
 
-.headername {
+.header_name {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -201,13 +177,13 @@ header button:last-child {
   padding: 20px;
 }
 
-.background {
+.header_background {
   background-color: rgb(145, 230, 152);
   padding: 10px;
   border-radius: 10px;
 }
 
-.headername h1 {
+.header_name h1 {
   margin-bottom: 10px;
 }
 

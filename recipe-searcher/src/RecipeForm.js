@@ -21,7 +21,7 @@ const newRecipe = {
       "serves": 0,
       "difficult": "Easy",
       "vote_count": 2,
-      "subcategory": "Breakfast",
+      "subcategory": [event.target.subcategory.value],
       "dish_type": "Mood boosting recipes",
       "maincategory": "health"
 }    
@@ -46,35 +46,41 @@ return (
       <input
         type="text"
         name="name"
-        placeholder="Enter your recipe's name..."
+        placeholder="name..."
         className="input-text"
       />
       <br/>
       <textarea
           type="text"
           name="description"
-          placeholder="Enter your recipe,s description..."
+          placeholder="description..."
           className="input-text"
         />
       <br/>
       <input
         type="text"
         name="image"
-        placeholder="Enter your recipe's image URL..."
-        className="input-text"
-      />
-      <br />
-      <input
-        type="text"
-        name="ingredients"
-        placeholder="Enter your recipe's ingredients..."
+        placeholder="image URL..."
         className="input-text"
       />
       <br />
       <textarea
+        type="text"
+        name="ingredients"
+        placeholder="ingredients..."
+        className="input-text"
+      />
+      <br />
+      <input
+        type="text" 
+        name="subcategory"
+        placeholder="Breakfast, Lunch, Dinner or Vegan..."
+        className="input-text"/>
+      <br/>
+      <textarea
           type="text"
           name="steps"
-          placeholder="Enter your recipe,s steps..."
+          placeholder="instructions..."
           className="input-text"
         />
         <br/>

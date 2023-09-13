@@ -9,8 +9,8 @@ const headerStyle = {
 return (
   <div>
     <header style={headerStyle}>
-      <div className="headername">
-        <h1 className="background">
+      <div className="header_name">
+        <h1 className="header_background">
           &#129369;&#160; FlatVorful &#160;&#160;&#129367;
         </h1>
       </div>
