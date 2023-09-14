@@ -1,42 +1,51 @@
+import Cookies from "js-cookie"
 
 function RecipeForm({setMyRecipes}) {
+  const userId = Cookies.get('flavorful_id');
+
+  function updateRecipesOnServer(updatedRecipes) {
+  fetch(`http://localhost:3000/users/${userId}`,{
+    method:"PATCH",
+    headers:{
+      "Content-Type":"application/json"
+    },
+    body: JSON.stringify({myrecipes: updatedRecipes})    
+  })
+  .then(resp => resp.json())
+  .then(updatedUserData => setMyRecipes(() => updatedUserData.myrecipes))
+  }
+
 
 function handleSubmit(event){
   event.preventDefault()
+  
+
+  function generateID() {
+    return Date.now()
+}
 
 const newRecipe = {
+    "id": generateID(),
     "name":event.target.name.value,
     "description": event.target.description.value,
     "image": event.target.image.value, 
-    "url":"",
-    "author":"",
-    "rattings":0,
     "ingredients": [event.target.ingredients.value],
     "steps": [event.target.steps.value],
-     "nutrients": {},
-      "times": {
-        "Preparation": "",
-        "Cooking": ""
-      },
-      "serves": 0,
-      "difficult": "Easy",
-      "vote_count": 2,
-      "subcategory": [event.target.subcategory.value],
-      "dish_type": "Mood boosting recipes",
-      "maincategory": "health"
+      "subcategory": event.target.subcategory.value,
 }    
 
-fetch("http://localhost:3000/recipes",{
-  method:"POST",
-  headers:{
-    "Content-Type":"application/json"
-  },
-  body: JSON.stringify(newRecipe)    
-})
-.then(resp => resp.json())
-.then(newRecipeData => setMyRecipes(prevRecipes =>{
-  return [newRecipeData]
-}))
+fetch(`http://localhost:3000/users/${userId}`)
+  .then(response => response.json())
+  .then(userData => {
+    const user = userData; 
+    const updatedRecipes = [...user.myrecipes, newRecipe];
+    return updatedRecipes;
+  })
+  .then(updateRecipesOnServer)
+  .catch(error => console.error("Error fetching user data:", error));
+
+
+
 }
 
 return (

@@ -1,12 +1,17 @@
 import RecipeCard from "./RecipeCard";
 import Header from "./Header";
 
-function RecipeList({selectedFilter, setSelectedFilter, setSearch, recipes, setRecipes }) {
+
+function RecipeList({setFav, selectedFilter, setSelectedFilter, setSearch, recipes, setRecipes }) {
+
+ 
 
   const individualRecipe = recipes.map(recipe => {
-    return <RecipeCard key={recipe.id} {...recipe}
+    return <RecipeCard setFav={setFav} key={recipe.id} {...recipe} recipes={recipes}
       setRecipes={setRecipes} />
 });
+
+
 
 
 return (

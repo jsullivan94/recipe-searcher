@@ -15,12 +15,15 @@ return (
         </h1>
       </div>
       <div>
-        <button onClick={() => setSelectedFilter('Breakfast')}>Breakfast</button>
-        <button onClick={() => setSelectedFilter('Lunch')}>Lunch</button>
-        <button onClick={() => setSelectedFilter('Dinner')}>Dinner</button>
-        <button onClick={() => setSelectedFilter('Desserts')}>Desserts</button>
-        <button onClick={() => setSelectedFilter('Vegan')}>Vegan</button>
-        <button onClick={() => setSelectedFilter(null)}>Show All</button>
+        <select className="cat_dropdown" onChange={e => setSelectedFilter(e.target.value)}>
+          <option>All</option>
+          <option>Breakfast</option>
+          <option>Lunch</option>
+          <option>Dinner</option>
+          <option>Vegetarian</option> 
+          <option>Vegan</option>
+          <option>Desserts</option>
+          </select>
       </div>
       <input onChange={(e) => setSearch(e.target.value)} type="text" placeholder="Search..." />
     </header>

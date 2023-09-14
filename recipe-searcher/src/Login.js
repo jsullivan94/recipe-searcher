@@ -1,7 +1,8 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import Cookies from "js-cookie"
 
-function Login({ setUser }) {
+function Login({ user, setUser }) {
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
@@ -24,6 +25,7 @@ function Login({ setUser }) {
                 const user = users[0];
                 if (user.password === password) {
                     setUser(user);
+                    Cookies.set('flavorful_id', user.id, { expires: 7 });
                     navigate("/");
                 } else {
                         alert("Incorrect password.");
@@ -52,34 +54,39 @@ function Login({ setUser }) {
     })
         .then(resp => resp.json())
         .then(resp => setUser(resp))
-        .then(navigate("/"))
+        Cookies.set('flavorful_id', user.id, { expires: 7 });
+        navigate("/")
+    }
+
+    function handleClick() {
+        setNewUser(prev => !prev)
     }
 
     return (
-        <div>
+        <div className="login">
         {!newUser ?  
         <div>
-            <h2>Login</h2>
-            <form onSubmit={handleLogin}>
-                <label>Username</label>
-                <input value={username} onChange={e => setUsername(e.target.value)}></input>
-                <label>Password</label>
-                <input type="password" value={password} onChange={e => setPassword(e.target.value)}></input>
-                <button type="submit">Submit</button>
+            <h2 className="login_head">Login</h2>
+            <form className="login_form" onSubmit={handleLogin}>
+                <label className="login_label">Username</label>
+                <input className="login_input" value={username} onChange={e => setUsername(e.target.value)}></input>
+                <label className="login_label">Password</label>
+                <input className="login_input"type="password" value={password} onChange={e => setPassword(e.target.value)}></input>
+                <button className="login_button" type="submit">Submit</button>
             </form>
         </div>
         :
         <div>
-            <h2>Signup</h2>
-            <form onSubmit={handleSignup}>
-                <label>Username</label>
-                <input value={username} onChange={e => setUsername(e.target.value)}></input>
-                <label>Password</label>
-                <input value={password} onChange={e => setPassword(e.target.value)}></input>
-                <button type="submit">Submit</button>
+            <h2 className="login_head">Signup</h2>
+            <form className="login_form" onSubmit={handleSignup}>
+                <label className="login_label">Username</label>
+                <input className="login_input" value={username} onChange={e => setUsername(e.target.value)}></input>
+                <label className="login_label">Password</label>
+                <input className="login_input" value={password} onChange={e => setPassword(e.target.value)}></input>
+                <button className="login_button" type="submit">Submit</button>
             </form>
         </div>}
-        <button onClick={() => setNewUser(prev => !prev)}>{!newUser ? "Signup" : "Login"}</button>
+        <button className="login_toggle" onClick={handleClick}>{!newUser ? "Signup" : "Login"} </button>
         </div>
     )
 

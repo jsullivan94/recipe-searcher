@@ -1,16 +1,28 @@
 import RecipeForm from "./RecipeForm";
-import RecipeCard from "./RecipeCard";
+import MyRecipesCard from "./MyRecipesCard";
+import Cookies from "js-cookie";
+import { useEffect } from "react";
 
 
-function MyRecipes({ myRecipes, setMyRecipes, setRecipes }) {
+
+function MyRecipes( {myRecipes, setMyRecipes}) {
     
-    const currentRecipe = myRecipes.map(myRecipe => <RecipeCard  key={myRecipe.id} {...myRecipe}/>)
 
+    const userId = Cookies.get('flavorful_id')
+
+    useEffect(() => {
+        fetch(`http://localhost:3000/users/${userId}`)
+        .then(resp => resp.json())
+        .then(resp =>setMyRecipes(() => resp.myrecipes))
+    }, [])
+
+    const userRecipes = !myRecipes ? null : myRecipes.map(myRecipe => <MyRecipesCard myRecipes={myRecipes} setMyRecipes={setMyRecipes}  key={myRecipe.id} {...myRecipe}/>)
+ 
 return (
     <div>
-        <RecipeForm setMyRecipes={setMyRecipes} setRecipes={setRecipes}/>
+        <RecipeForm setMyRecipes={setMyRecipes}/>
         <div className="recipe-container">
-            {currentRecipe}
+            {userRecipes}
         </div>
     </div>
 )};
