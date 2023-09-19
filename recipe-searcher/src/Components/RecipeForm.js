@@ -15,11 +15,9 @@ function RecipeForm({setMyRecipes}) {
   .then(updatedUserData => setMyRecipes(() => updatedUserData.myrecipes))
   }
 
-
 function handleSubmit(event){
   event.preventDefault()
   
-
   function generateID() {
     return Date.now()
 }
@@ -43,9 +41,6 @@ fetch(`http://localhost:3000/users/${userId}`)
   })
   .then(updateRecipesOnServer)
   .catch(error => console.error("Error fetching user data:", error));
-
-
-
 }
 
 return (

@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
 
-function RecipeDetails({ recipes }) {
+function FavRecipeDetails({ fav }) {
 
     const { id } = useParams();
-    const recipe = recipes.find(r => r.id === id);
+    const recipe = fav.find(r => r.id === id);
 
     if (!recipe) {
         return <div>Loading...</div>;
@@ -21,13 +21,9 @@ return(
     <div className="details">
         <img alt={recipe.name} src={recipe.image} />
         <h1>{recipe.name}</h1>
-    <div>
-        {ingredientsList}
-    </div>
-    <div>
-        {stepsList}
-    </div>
+    <div>{ingredientsList}</div>
+    <div>{stepsList}</div>
     </div>
 )};
 
-export default RecipeDetails;
+export default FavRecipeDetails;

@@ -7,28 +7,22 @@ function RecipeCard({ recipes, setFav, id, name, image, description, setRecipes,
     const [isLiked, setIsLiked] = useState(false)
     
     
-
-   
     function handleDelete(){
-        fetch(`http://localhost:3000/recipes/${id}`,{
-        method: "DELETE"
-        })
-        .then(resp => resp.json())
-        .then(() =>setRecipes(prevRecipes =>{
-            return prevRecipes.filter(recipe=> recipe.id !== id)
-        }))
-    };
-
-
-    
+      fetch(`http://localhost:3000/recipes/${id}`,{
+      method: "DELETE"
+      })
+      .then(resp => resp.json())
+      .then(() =>setRecipes(prevRecipes =>{
+          return prevRecipes.filter(recipe=> recipe.id !== id)
+      }))
+      };
 
     function handleClick(){
         setIsLiked(preVal => !preVal)
       
-      
         fetch(`http://localhost:3000/users/${userId}`)
-      .then(response => response.json())
-      .then(userData => {
+        .then(response => response.json())
+        .then(userData => {
         const user = userData; 
         const likedRecipe = recipes.find(recipe => recipe.id === id)
         const updatedRecipes = [...user.likedrecipes, likedRecipe];
@@ -36,7 +30,6 @@ function RecipeCard({ recipes, setFav, id, name, image, description, setRecipes,
       })
       .then(updateRecipesOnServer)
       .catch(error => console.error("Error fetching user data:", error));
-      
       
       function updateRecipesOnServer(updatedRecipes) {
         fetch(`http://localhost:3000/users/${userId}`,{
@@ -50,18 +43,14 @@ function RecipeCard({ recipes, setFav, id, name, image, description, setRecipes,
         .then(updatedUserData => setFav(() => updatedUserData.likedrecipes))
         }
       }
-      
-
-    return (
     
+    return (
     <div className="recipe-card">
         <h1 >{name}</h1>
         <Link to={`/recipe/${id}`}>
         <img onClick={onClick} src={image} alt={name}/>
         </Link>
-        <div>
-            {description}
-        </div>
+        <div>{description}</div>
         <div>
             {!isLiked ?
                 <button className="like-btn" onClick={handleClick}>Favorite  &#x2661;</button> :

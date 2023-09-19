@@ -8,7 +8,6 @@ function Login({ user, setUser }) {
     const [password, setPassword] = useState('')
     const [newUser, setNewUser] = useState(false)
    
-
     const navigate = useNavigate()
 
     function handleLogin(e) {

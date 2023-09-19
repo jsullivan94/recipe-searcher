@@ -1,5 +1,5 @@
-import RecipeForm from "./RecipeForm";
-import MyRecipesCard from "./MyRecipesCard";
+import RecipeForm from "../Components/RecipeForm";
+import MyRecipesCard from "../Components/MyRecipesCard";
 import Cookies from "js-cookie";
 import { useEffect } from "react";
 
@@ -21,9 +21,7 @@ function MyRecipes( {myRecipes, setMyRecipes}) {
 return (
     <div>
         <RecipeForm setMyRecipes={setMyRecipes}/>
-        <div className="recipe-container">
-            {userRecipes}
-        </div>
+        <div className="recipe-container">{userRecipes}</div>
     </div>
 )};
 

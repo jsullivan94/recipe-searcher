@@ -1,16 +1,17 @@
 import {useState, useEffect} from "react";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
-import RecipeList from "./RecipeList";
-import Calculator from "./Calculator";
-import arrayShuffle from "array-shuffle";
-import MyRecipes from "./MyRecipes";
-import Nav from "./Nav";
-import RecipeDetails from "./RecipeDetails";
-import Login from "./Login";
 import Cookies from "js-cookie";
-import MyRecipeDetails from "./MyRecipeDetails";
-import Favorites from "./Favorites";
-import FavRecipeDetails from "./FavRecipeDetails";
+
+import RecipeList from "../Pages/RecipeList";
+import Calculator from "../Pages/Calculator"
+import arrayShuffle from "array-shuffle";
+import MyRecipes from "../Pages/MyRecipes";
+import Nav from "./Nav";
+import RecipeDetails from "../Pages/RecipeDetails";
+import Login from "../Pages/Login";
+import MyRecipeDetails from "../Pages/MyRecipeDetails";
+import Favorites from "../Pages/Favorites";
+import FavRecipeDetails from "../Pages/FavRecipeDetails";
 
 function App() {
   const [recipes, setRecipes] = useState([])
@@ -39,9 +40,7 @@ function App() {
     }
   }, [])
   
-
   return (
-    
     <div>
     <BrowserRouter>
     {!user ? <Login user={user} setUser={setUser} /> 
