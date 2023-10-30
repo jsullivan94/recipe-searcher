@@ -18,14 +18,14 @@ code {
 }
 
 .recipe-card {
-  flex: 0 0 24%; /* This will ensure that 4 cards fit in a row (100/4 = 25, but we leave a little room for margins) */
-  margin: 1%; /* Little bit of margin for some spacing */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Optional: Give the cards a small shadow for effect */
-  transition: transform 0.3s ease-in-out; /* Optional: Transition for hover effect */
+  flex: 0 0 24%;
+  margin: 1%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease-in-out;
 }
 
 .recipe-card:hover {
-  transform: scale(1.05); /* Optional: Make the card grow a bit when hovering */
+  transform: scale(1.05);
 }
 
 .recipe-card h1 {
@@ -127,12 +127,6 @@ header button:last-child {
   margin-right: 0;
 }
 
-
-
-
-
-
-
 .calculator {
   display: flex;
   flex-direction: column;
@@ -158,30 +152,6 @@ header button:last-child {
   width: 300px;
 }
 
-.calculator label {
-  margin-top: 10px;
-  font-size: 16px;
-}
-
-.calculator input[type="submit"] {
-  margin-top: 20px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.calculator input[type="submit"]:hover {
-  background-color: #45a049;
-}
-
-.calculator select:focus,
-.calculator input[type="text"]:focus {
-  outline: none;
-  border-color: #4caf50;
-  box-shadow: 0 0 5px #4caf50;
-}
-
 .details {
   display: flex;
   flex-direction: column;
@@ -198,7 +168,7 @@ header button:last-child {
   margin-bottom: 5px;
 }
 
-.headername {
+.header_name {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -207,11 +177,121 @@ header button:last-child {
   padding: 20px;
 }
 
-.background {
-  background-color: white;
+.header_background {
+  background-color: rgb(145, 230, 152);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.header_name h1 {
+  margin-bottom: 10px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #f2f2f2;
   padding: 10px;
 }
 
-.headername h1 {
-  margin-bottom: 10px;
+nav a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px;
+  margin: 0 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #ddd;
+}
+
+.cat_dropdown {
+  width: 200px;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  cursor: pointer;
+  outline: none; /* Removes the default browser outline */
+  appearance: none; /* Removes the default browser styling */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.cat_dropdown:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cat_dropdown:focus {
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Login.css */
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* use full height of the screen */
+  font-family: Arial, sans-serif; /* set a basic font */
+  background-color: #f4f4f4; /* light gray background */
+}
+
+.login_head {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.login_form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* space between each item */
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #fff; /* white background */
+  border-radius: 5px;
+  width: 300px;
+}
+
+.login_label {
+  font-weight: bold;
+}
+
+.login_input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.login_button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007BFF; /* bootstrap primary color */
+  color: #fff; /* white text */
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* smooth transition for hover effect */
+}
+
+.login_button:hover {
+  background-color: #0056b3; /* darken the color on hover */
+}
+
+/* Bottom button for toggling between Signup and Login */
+.login_toggle {
+  margin-top: 20px;
+}
+
+.no_favs {
+  text-align: center;
+  color: #333;
+  margin-top: 100px;
 }
