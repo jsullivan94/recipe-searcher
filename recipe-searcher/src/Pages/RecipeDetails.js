@@ -19,8 +19,8 @@ const stepsList = recipe.steps.map(step => {
 
 return(
     <div className="details">
-    <img alt={recipe.name} src={recipe.image} />
     <h1>{recipe.name}</h1>
+    <img alt={recipe.name} src={recipe.image} />
     <div>{ingredientsList}</div>
     <div>{stepsList}</div>
     </div>

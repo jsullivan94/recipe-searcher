@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# Flavorful: The Ultimate Recipe Searcher 🍲
+Welcome to Flavorful, a simple yet robust recipe web application that allows you to search, filter, save, and create delicious recipes. Whether you're looking for a hearty breakfast, a light lunch, or a vegan dessert, Flavorful has got you covered.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Flavorful](public/Screenshot 2023-10-30 125250.png)
 
-## Available Scripts
+## Features
+- **Search** & Filter: Find recipes that fit your needs. Filter by categories like:
 
-In the project directory, you can run:
+- Breakfast
+- Lunch
+- Dinner
+- Vegetarian
+- Vegan
+- Desserts
+- **Save Your Favorites:** Stumbled upon a recipe you love? Save it to your favorites and access it anytime.
 
-### `npm start`
+- **Create & Share:** Have a secret family recipe or a culinary masterpiece of your own? Add it to Flavorful.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Measurement Conversion Calculator:** No more second guessing or endless Googling. Convert your culinary measurements with ease.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack 💻
+- **Front-end:** React.js
+- **Data Storage:** JSON Server (acts as a mock backend to save recipes and user data)
 
-### `npm test`
+## Prerequisites
+- Node.js
+- npm
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Installation
+### Clone this repository:
+**Using HTTPS:** 
+```
+git clone https://github.com/jsullivan94/recipe-searcher.git
+```
+**Using SSH:**
+``` 
+git clone git@github.com:jsullivan94/recipe-searcher.git
+```
+### Navigate to the project directory:
+```
+cd recipe-searcher
+```
+### Install the required packages:
+```
+npm install
+```
+### Start the JSON server:
+change template_db.json name to db.json
+```
+json-server --watch db.json
+```
+### Start the development server:
+```
+npm start
+```
+## Open your browser and visit http://localhost:3000/ to see the magic!

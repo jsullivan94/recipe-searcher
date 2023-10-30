@@ -11,7 +11,7 @@ return (
     <header style={headerStyle}>
       <div className="header_name">
         <h1 className="header_background">
-          &#129369;&#160; FlatVorful &#160;&#160;&#129367;
+          &#129369;&#160; Flavorful &#160;&#160;&#129367;
         </h1>
       </div>
       <div>
