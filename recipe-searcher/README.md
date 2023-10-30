@@ -1,7 +1,7 @@
 # Flavorful: The Ultimate Recipe Searcher 🍲
 Welcome to Flavorful, a simple yet robust recipe web application that allows you to search, filter, save, and create delicious recipes. Whether you're looking for a hearty breakfast, a light lunch, or a vegan dessert, Flavorful has got you covered.
 
-![Flavorful](Screenshot 2023-10-30 125250.png)
+![Flavorful](public/Flavorful.png)
 
 ## Features
 - **Search** & Filter: Find recipes that fit your needs. Filter by categories like:
